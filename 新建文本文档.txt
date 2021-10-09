@@ -1,0 +1,40 @@
+94059@LAPTOP-65SB0RBS MINGW64 ~
+$ mkdir ~/local
+
+94059@LAPTOP-65SB0RBS MINGW64 ~
+$ cd ~/local
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ touch demo.txt
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ pwd
+/c/Users/94059/local
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ dir
+demo.txt
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ cat>>demo.txt<<zar
+> mkdir demo
+> cd demo
+> mkdir css js
+> touch index.html css/style.css js/main.js
+> exit
+> zar
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ cat demo.txt
+mkdir demo
+cd demo
+mkdir css js
+touch index.html css/style.css js/main.js
+exit
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ sh~/local/demo.txt
+bash: sh~/local/demo.txt: No such file or directory
+
+94059@LAPTOP-65SB0RBS MINGW64 ~/local
+$ sh ~/local/demo.txt
