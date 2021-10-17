@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+#define ex 0.000001
+
+int main() {
+	printf("XXXXXXX\n");
+	double x = 0.0, temp = 0.0, sin = 0.0, i = 0.0;
+	while (1) {
+		printf("please input on number :");
+		scanf("%lf", &x);
+		temp = x;
+		while (fabs(temp) > ex)
+		{
+			sin += temp;
+			i += 2;
+			temp = (-1) * temp * x * x / ((i + 1) * (i));
+
+		}
+		printf("sin(%lf)=%lf", x, sin);
+		printf("the number is %lf\n", i);
+	}
+	return 0;
+}
+
+
+
+
+                 
+                 
+
