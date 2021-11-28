@@ -1,0 +1,44 @@
+#include<iostream>
+#include<string>
+#include<fstream>
+using namespace std;
+
+class Student {
+public :
+	char name[10];
+	double score;
+	Student(){}
+	Student(const char* n, double sc) {
+		strcpy_s(name, n);
+		score = sc;
+	}
+	void display() {
+		cout << name << " " << score << endl;
+	}
+
+};
+
+int main() {
+	Student s1("Tom", 80), s2("Jerry", 90), t;
+	ofstream fout("d.dat", ios::binary);
+	if (!fout) {
+		cout << "文件打开失败" << endl;
+		exit(1);
+	}
+	fout.write((char*)&s1, sizeof(s1));
+	fout.write((char*)&s2, sizeof(s2));
+	fout.close();
+
+	ifstream fin("data.dat", ios::binary);
+	if (!fin) {
+		cout << "文件打开失败" << endl;
+		exit(1);
+	}
+	while (fin.peek() != EOF) {
+		fin.read((char*)&t, sizeof(t));
+		t.display();
+	}
+	fin.close();
+	return 0;
+
+}
